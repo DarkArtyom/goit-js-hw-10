@@ -1,11 +1,11 @@
 const countryListEl = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 function renderCountries(inputValue) {
   if (inputValue.length > 10) {
-    return Notify.info(
-      `Too many matches found. Please enter a more specific name.`
-    );
+    Notify.info(`Too many matches found. Please enter a more specific name.`);
+    return;
   }
   if (inputValue.length === 1) {
     countryListEl.innerHTML = '';
